@@ -173,7 +173,7 @@ public class main{
                     } else {
                         System.out.println("Item not found!");
                     }
-                    break;
+                    break; 
                 }
 
                 case 4: {
