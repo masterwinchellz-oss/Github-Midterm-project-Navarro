@@ -183,7 +183,7 @@ public class main{
                     if (!Validations.isValidCategory(category)) {
                         System.out.println("Category " + category + " does not exist!");
                         continue;
-                    }
+                    } 
 
                     List<item_system> results = manager.getItemsByCategory(Validations.normalCategory(category));
                     if (results.isEmpty()) {
