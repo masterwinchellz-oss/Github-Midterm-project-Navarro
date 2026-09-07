@@ -32,6 +32,7 @@ public class main{
             choice = 0;
 
             while (!isChoiceValid) {
+                System.out.println();
                 System.out.print("Enter your choice: ");
                 String choiceInput = scanner.nextLine().trim();
 
@@ -47,7 +48,8 @@ public class main{
             switch (choice) {
 
                 case 1: {
-                    System.out.print("Input Category: ");
+                    System.out.println("\t\t---Add Item---");
+                    System.out.print("Input Category (Electronic, Entertainment, Clothing): ");
                     category = scanner.nextLine().trim();
 
                     if (!Validations.isValidCategory(category)) {
@@ -59,7 +61,7 @@ public class main{
                     String newId = null;
                     boolean isChecking = true;
                     while (isChecking) {
-                        System.out.print("Input ID: ");
+                        System.out.print("Input ID (ex. ABCD1234/ABCD): ");
                         newId = scanner.nextLine();
                         if (Validations.isValidId(newId)) {
                             break;
@@ -177,7 +179,7 @@ public class main{
                 }
 
                 case 4: {
-                    System.out.print("Input Category: ");
+                    System.out.print("Input Category (Electronic, Entertainment, Clothing): ");
                     category = scanner.nextLine();
 
                     if (!Validations.isValidCategory(category)) {
@@ -200,7 +202,7 @@ public class main{
                         System.out.println("Inventory is Empty.");
                         continue;
                     }
-                    printTable(all_items, false);
+                    printTable(all_items, true);
                     break;
                 }
 
@@ -278,7 +280,7 @@ public class main{
         if (includeCategory) {
             System.out.printf("%-8s %-15s %-10s %-10s %-15s%n", "ID", "Name", "Quantity", "Price", "Category");
         } else {
-            System.out.printf("%-8s %-15s %-10s %-10s%n", "ID", "Name", "Quantity", "Price");
+            System.out.printf("%-8s %-15s %-10s %-10s %-15s%n", "ID", "Name", "Quantity", "Price", "Category");
         }
         for (item_system item : list) {
             if (includeCategory) {

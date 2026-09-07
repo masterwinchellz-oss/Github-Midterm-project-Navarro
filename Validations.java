@@ -69,7 +69,10 @@ public class Validations {
         }
 
         public static boolean isValidId(String id){
-            return !isBlank(id) && !id.trim().contains(" ");
+            if (isBlank(id)) {
+                return false;
+            }
+            return id.trim().matches("^[a-zA-Z0-9]{4,8}$");
         }
 
         public static boolean isValidName(String name) {
